@@ -32,7 +32,8 @@ const LogoImage: React.FCC<{
     // </svg>
     <div className="flex items-center">
       <div className="flex items-center">
-        <Image src={mentanIcon} className="h-10 w-10" />
+        <Image src={mentanIcon} className="h-10 w-10" alt="Mentan Logo" />
+
         <p className="ml-3 text-3xl font-bold">
           <span className="text-black">mentan</span>
           <span className="bg-gradient-to-br from-primary-500 to-primary-400 to-primary-400 bg-clip-text leading-[1.2] text-transparent">
