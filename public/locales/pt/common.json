@@ -1,0 +1,41 @@
+{
+  "dashboardTabLabel": "Dashboard",
+  "organizationSettingsTabLabel": "Organização",
+  "settingsTabLabel": "Configurações",
+  "profileSettingsTabLabel": "Perfil",
+  "subscriptionSettingsTabLabel": "Subscription",
+  "emailAddress": "Email",
+  "password": "Senha",
+  "modalConfirmationQuestion": "Você tem certeza que quer continuar?",
+  "imageInputLabel": "Clique aqui para fazer upload de uma imagem",
+  "cancel": "Cancelar",
+  "backToHomePage": "Voltar ao Início",
+  "pageNotFound": "Opps, não encontrei :(",
+  "pageNotFoundSubHeading": "Desculpe, a página que você estava procurando não foi encontrada",
+  "genericError": "Desculpe, encontramos um erro inesperado",
+  "genericErrorSubHeading": "Pedimos desculpas pelo inconveniente, mas encontramos um erro inesperado. Por favor, tente novamente mais tarde.",
+  "anonymousUser": "Anônimo",
+  "theme": "Tema",
+  "lightTheme": "Claro",
+  "darkTheme": "Escuro",
+  "systemTheme": "Sistema",
+  "expandSidebar": "Expandir Sidebar",
+  "collapseSidebar": "Fechar Sidebar",
+  "documentation": "Documentação",
+  "getStarted": "Começar",
+  "contactUs": "Fale conosco",
+  "roles": {
+    "owner": {
+      "label": "Proprietário",
+      "description": "Pode alterar qualquer configuração, convidar novos membros e gerenciar o faturamento"
+    },
+    "admin": {
+      "label": "Admin",
+      "description": "Pode alterar algumas configurações, convidar membros, realizar ações disruptivas"
+    },
+    "member": {
+      "label": "Member",
+      "description": "Não é possível convidar membros ou alterar configurações"
+    }
+  }
+}

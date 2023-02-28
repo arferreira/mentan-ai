@@ -1,0 +1,67 @@
+{
+  "subscriptionTabSubheading": "Gerencie sua assinatura e configurações de cobrança",
+  "checkout": "Checkout",
+  "manageBillingDescription": "Visite seu Portal do Cliente para gerenciar sua assinatura e cobrança.",
+  "manageBilling": "Ir para o Portal do Cliente",
+  "notSubscribedToAnyPlan": "Você não está atualmente inscrito em nenhum plano",
+  "choosePlan": "Selecione um plano abaixo",
+  "currentPlan": "Seu Plano",
+  "subscriptionWillEndOn": "A assinatura terminará em {{ endDate }}",
+  "unknownErrorAlertHeading": "Desculpe, algo deu errado",
+  "unknownErrorAlert": "Encontramos um erro desconhecido ao processar seu pagamento. Por favor tente novamente ou entre em contato com o suporte.",
+  "checkOutCanceledAlertHeading": "O checkout foi cancelado",
+  "checkOutCanceledAlert": "O checkout foi cancelado. Por favor entre em contato conosco se você estiver experimentando algum problema.",
+  "checkOutCompletedAlertHeading": "Checkout concluído com sucesso",
+  "checkOutCompletedAlert": "Uhu, seu pagamento foi concluído!",
+  "cancelAtPeriodEndDescription": "Sua assinatura está programada para ser cancelada em {{ endDate }}.",
+  "renewAtPeriodEndDescription": "Sua assinatura está programada para ser renovada em {{ endDate }}",
+  "noPermissionsAlertHeading": "Você não tem permissões para alterar a cobrança",
+  "noPermissionsAlertBody": "Por favor, entre em contato com o proprietário da sua organização para alterar as configurações de cobrança para sua organização.",
+  "status": {
+    "free": {
+      "label": "Plano Grátis",
+      "heading": "Você está em um plano grátis",
+      "description": "Você está em um plano grátis. Você pode atualizar para um plano pago a qualquer momento."
+    },
+    "active": {
+      "label": "Ativo",
+      "heading": "Sua assinatura está ativa",
+      "description": "Sua assinatura está ativa. Você pode gerenciar sua assinatura e cobrança no Portal do Cliente."
+    },
+    "trialing": {
+      "label": "Teste",
+      "heading": "Você está em um teste",
+      "description": "Seu teste terminará em {{ trialEndDate }}."
+    },
+    "past_due": {
+      "label": "Vencido",
+      "heading": "Seu fatura está vencida",
+      "description": "Sua fatura está vencida. Por favor, atualize seu método de pagamento."
+    },
+    "canceled": {
+      "label": "Cancelado",
+      "heading": "Sua assinatura está cancelada",
+      "description": "Sua assinatura está cancelada. Ela está programada para terminar em {{ endDate }}."
+    },
+    "unpaid": {
+      "label": "Não pago",
+      "heading": "Sua fatura não está paga",
+      "description": "Sua fatura não está paga. Por favor, atualize seu método de pagamento."
+    },
+    "incomplete": {
+      "label": "Incompleto",
+      "heading": "Estamos esperando por seu pagamento",
+      "description": "Estamos esperando que seu pagamento seja concluído. Por favor, seja paciente conosco."
+    },
+    "incomplete_expired": {
+      "label": "Expirado",
+      "heading": "Seu pagamento expirou",
+      "description": "Seu pagamento expirou. Por favor, atualize seu método de pagamento."
+    },
+    "paused": {
+      "label": "Pausado",
+      "heading": "Sua assinatura está pausada",
+      "description": "Sua assinatura está pausada. Você pode retomá-la a qualquer momento."
+    }
+  }
+}
