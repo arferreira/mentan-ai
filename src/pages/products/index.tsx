@@ -18,22 +18,22 @@ const Product = () => {
   const { userSession, setUserSession } = useContext(UserSessionContext);
   const { data: user } = useUser();
 
-  const onUpdate = useCallback(
-    (data: ProfileData) => {
-      const authData = userSession?.auth;
+  //   const onUpdate = useCallback(
+  //     (data: ProfileData) => {
+  //       const authData = userSession?.auth;
 
-      if (authData) {
-        setUserSession({
-          auth: {
-            ...authData,
-            ...data,
-          },
-          data: userSession.data,
-        });
-      }
-    },
-    [setUserSession, userSession]
-  );
+  //       if (authData) {
+  //         setUserSession({
+  //           auth: {
+  //             ...authData,
+  //             ...data,
+  //           },
+  //           data: userSession.data,
+  //         });
+  //       }
+  //     },
+  //     [setUserSession, userSession]
+  //   );
 
   if (!user) {
     return null;
