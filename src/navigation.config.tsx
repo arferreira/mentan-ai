@@ -1,5 +1,9 @@
 import configuration from '~/configuration';
-import { Cog8ToothIcon, Squares2X2Icon } from '@heroicons/react/24/outline';
+import {
+  Cog8ToothIcon,
+  SparklesIcon,
+  Squares2X2Icon,
+} from '@heroicons/react/24/outline';
 
 const NAVIGATION_CONFIG = {
   items: [
@@ -8,6 +12,13 @@ const NAVIGATION_CONFIG = {
       path: configuration.paths.appHome,
       Icon: ({ className }: { className: string }) => {
         return <Squares2X2Icon className={className} />;
+      },
+    },
+    {
+      label: 'common:productTabLabel',
+      path: 'products',
+      Icon: ({ className }: { className: string }) => {
+        return <SparklesIcon className={className} />;
       },
     },
     {

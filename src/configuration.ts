@@ -52,6 +52,7 @@ const configuration = {
     emailLinkSignIn: '/auth/link',
     onboarding: `/onboarding`,
     appHome: '/dashboard',
+    products: '/products',
     settings: {
       profile: '/settings/profile',
       authentication: '/settings/profile/authentication',
