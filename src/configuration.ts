@@ -3,7 +3,7 @@ import { GoogleAuthProvider } from 'firebase/auth';
 
 const configuration = {
   site: {
-    name: 'mentan.ai - Your SaaS Title',
+    name: 'mentan.ai - create any infoproduct in minutes',
     description: 'Unlock a world of possibilities with our innovative product.',
     themeColor: '#ffffff',
     themeColorDark: '#0a0a0a',
