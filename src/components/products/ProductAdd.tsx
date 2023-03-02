@@ -67,7 +67,7 @@ export function ProductAdd() {
               <ProductsContentContainer>
                 <div className={'flex flex-col'}>
                   {/* load the form */}
-                  <form className="max-w-lg">
+                  <form className="max-w-lg" onSubmit={handleNiche}>
                     <div className="mb-4 ">
                       <label className="mb-2 block" htmlFor="niche">
                         Tell us your niche and let me create your infoproduct!
@@ -83,10 +83,7 @@ export function ProductAdd() {
                         />
                         <button
                           className="absolute right-0 flex h-full items-center justify-center rounded-r border-blue-500 bg-blue-500 py-2 px-4 font-bold text-white hover:bg-blue-700"
-                          onClick={(event) => {
-                            event.preventDefault();
-                            handleNiche;
-                          }}
+                          type="submit"
                         >
                           {loading ? (
                             <svg
