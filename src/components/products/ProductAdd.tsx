@@ -29,6 +29,7 @@ export function ProductAdd() {
     event.preventDefault();
     // async call
     setGeneratedTitles([]);
+    setLoading(true);
     console.log(niche);
     try {
       const response = await fetch('/api/products/firstLayer', {
@@ -47,6 +48,7 @@ export function ProductAdd() {
           title: product.title,
         }))
       );
+      setLoading(false);
     } catch (error) {
       console.error(error);
       setGeneratedTitles([]);
@@ -86,17 +88,38 @@ export function ProductAdd() {
                             handleNiche(event);
                           }}
                         >
-                          <svg
-                            className="h-4 w-4 fill-current text-white"
-                            viewBox="0 0 20 20"
-                          >
-                            <path d="M0 11l2-2 5 5L18 3l2 2L7 18z" />
-                          </svg>
+                          {loading ? (
+                            <svg
+                              className="h-4 w-4 animate-spin text-white"
+                              viewBox="0 0 24 24"
+                            >
+                              <path
+                                fill="none"
+                                stroke="currentColor"
+                                stroke-width="2"
+                                stroke-linecap="round"
+                                stroke-linejoin="round"
+                                d="M4 12c0-4.4 3.6-8 8-8s8 3.6 8 8-3.6 8-8 8-8-3.6-8-8z"
+                              />
+                            </svg>
+                          ) : (
+                            <svg
+                              className="h-4 w-4 fill-current text-white"
+                              viewBox="0 0 20 20"
+                            >
+                              <path d="M0 11l2-2 5 5L18 3l2 2L7 18z" />
+                            </svg>
+                          )}
                         </button>
                       </div>
                     </div>
                     {/* Show the created products */}
                     <div className="flex w-full flex-wrap justify-center">
+                      {loading ? (
+                        <p>Creating infoproducts for you...</p>
+                      ) : (
+                        <></>
+                      )}
                       {generatedTitles &&
                         generatedTitles.map(
                           (title: { title: string }, index: number) => (
