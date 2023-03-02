@@ -1,6 +1,9 @@
 {
   "dashboardTabLabel": "Dashboard",
   "productTabLabel": "Products",
+  "productsHeadLine": "Here's what is happening in your infoproducts",
+  "withoutProducts": "Oops... You don't have any products created yet",
+  "createProductButton": "Create product",
   "organizationSettingsTabLabel": "Organization",
   "settingsTabLabel": "Settings",
   "profileSettingsTabLabel": "Profile",
@@ -39,4 +42,5 @@
       "description": "Cannot invite members or change settings"
     }
   }
+
 }

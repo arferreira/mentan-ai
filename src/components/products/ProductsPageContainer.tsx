@@ -23,11 +23,7 @@ const ProductsPageContainer: React.FCC<{
 }> = ({ children, title }) => {
   return (
     <RouteShell title={title}>
-      <div
-        className={`mt-4 flex h-full flex-col space-y-4 lg:mt-6 lg:flex-row lg:space-y-0 lg:space-x-8`}
-      >
-        {children}
-      </div>
+      <div className={``}>{children}</div>
     </RouteShell>
   );
 };

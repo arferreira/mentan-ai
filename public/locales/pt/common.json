@@ -1,6 +1,9 @@
 {
   "dashboardTabLabel": "Dashboard",
   "productTabLabel": "Produtos",
+  "productsHeadLine": "Aqui você encontra o que está acontecendo em seus infoprodutos",
+  "withoutProducts": "Ops... Você ainda não possui produtos criados",
+  "createProductButton": "Criar produto",
   "organizationSettingsTabLabel": "Organização",
   "settingsTabLabel": "Configurações",
   "profileSettingsTabLabel": "Perfil",
