@@ -82,3 +82,8 @@ cypress/screenshots
 # Jetbrains IDE
 vcs.xml
 .idea/
+
+.env
+.env.development
+.env.production
+
