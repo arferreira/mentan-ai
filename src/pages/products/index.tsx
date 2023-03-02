@@ -18,24 +18,15 @@ import Heading from '~/core/ui/Heading';
 import Tile from '~/core/ui/Tile';
 import { useUserSession } from '~/core/hooks/use-user-session';
 
-import { FontAwesomeIcon } from '@fortawesome/react-fontawesome';
-import { faEye, faEdit, faTrash } from '@fortawesome/free-solid-svg-icons';
-
-interface Ebook {
-  id: number;
-  title: string;
-  description: string;
-}
-
-interface ProductsTableProps {
-  ebooks: Ebook[];
-}
+import { ProductsTable } from '~/components/products/ProductsTable';
+import { ProductsTitle } from '~/components/products/ProductsTitle';
+import router from 'next/router';
 
 const Product = () => {
   const { userSession, setUserSession } = useContext(UserSessionContext);
   const { data: user } = useUser();
 
-  const [hasProducts, setHasProducts] = useState(true);
+  const [hasProducts, setHasProducts] = useState(false);
   const { t } = useTranslation();
 
   const ebooks = {
@@ -64,6 +55,10 @@ const Product = () => {
           'A classic novel about love and social class in early 19th century England.',
       },
     ],
+  };
+
+  const handleAddProduct = () => {
+    router.push('/products/add');
   };
 
   //   const onUpdate = useCallback(
@@ -110,7 +105,9 @@ const Product = () => {
                       </div>
                       <div className="flex items-center justify-center">
                         <div className="align-center">
-                          <Button>{t('common:createProductButton')}</Button>
+                          <Button onClick={handleAddProduct}>
+                            {t('common:createProductButton')}
+                          </Button>
                         </div>
                       </div>
                     </>
@@ -129,71 +126,4 @@ export default Product;
 
 export async function getServerSideProps(ctx: GetServerSidePropsContext) {
   return await withAppProps(ctx);
-}
-
-function ProductsTitle() {
-  const { t } = useTranslation();
-  return (
-    <div>
-      <Heading type={4}>{t('common:productTabLabel')}</Heading>
-
-      <p className={'text-gray-500 dark:text-gray-400'}>
-        <span>{t('common:productsHeadLine')}</span>
-      </p>
-    </div>
-  );
-}
-
-function ProductsTable({ ebooks }: ProductsTableProps) {
-  return (
-    <table className={'Table'}>
-      <thead>
-        <tr>
-          <th style={{ width: '25%' }}>Title</th>
-          <th>Niche</th>
-          <th>Potential Profit</th>
-          <th>Created at</th>
-          <th>Status</th>
-          <th style={{ width: '15%' }}>Actions</th>
-        </tr>
-      </thead>
-
-      <tbody>
-        {ebooks.map((ebook: Ebook) => (
-          <tr key={ebook.id}>
-            <td className="text-bold">{ebook.title}</td>
-            <td>Investing</td>
-            <td>$100.2</td>
-            <td>
-              {new Date('2023-02-25 19:47:32').toLocaleDateString('en-US', {
-                year: 'numeric',
-                month: 'long',
-                day: 'numeric',
-              })}
-            </td>
-
-            <td>
-              <Tile.Badge trend={'up'}>Running</Tile.Badge>
-            </td>
-            <td>
-              <button
-                className="mr-4 text-gray-500 hover:text-gray-600 focus:outline-none"
-                aria-label="View"
-                title="View"
-              >
-                <FontAwesomeIcon icon={faEye} />
-              </button>
-              <button
-                className="text-indigo-500 hover:text-indigo-600 focus:outline-none"
-                aria-label="Edit"
-                title="Edit"
-              >
-                <FontAwesomeIcon icon={faEdit} />
-              </button>
-            </td>
-          </tr>
-        ))}
-      </tbody>
-    </table>
-  );
 }
