@@ -5,6 +5,8 @@ import ProductsContentContainer from './ProductsContentContainer';
 import { useTranslation } from 'next-i18next';
 import { ChangeEvent, useState } from 'react';
 
+import { MembershipRole } from '~/lib/organizations/types/membership-role';
+
 const NICHES = [
   'Business',
   'Finance',
@@ -24,6 +26,8 @@ export function ProductAdd() {
   const [generatedTitles, setGeneratedTitles] = useState<{ title: string }[]>(
     []
   );
+
+  // hooks
 
   const handleNiche = async (event: React.FormEvent<HTMLFormElement>) => {
     event.preventDefault();
@@ -48,6 +52,7 @@ export function ProductAdd() {
           title: product.title,
         }))
       );
+
       setLoading(false);
     } catch (error) {
       console.error(error);
