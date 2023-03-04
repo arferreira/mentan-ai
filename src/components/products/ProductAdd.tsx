@@ -3,21 +3,10 @@ import ProductsPageContainer from './ProductsPageContainer';
 import { ProductsTitle } from './ProductsTitle';
 import ProductsContentContainer from './ProductsContentContainer';
 import { useTranslation } from 'next-i18next';
-import { ChangeEvent, useState } from 'react';
+import { useState } from 'react';
 
-import { MembershipRole } from '~/lib/organizations/types/membership-role';
 import { useUser } from 'reactfire';
 import { useCreateProduct } from '~/lib/products/hooks/use-create-product';
-
-const NICHES = [
-  'Business',
-  'Finance',
-  'Health',
-  'Personal Development',
-  'Technology',
-  'Education',
-  'Marketing',
-];
 
 interface Product {
   title: string;
@@ -30,7 +19,6 @@ export function ProductAdd() {
   const { t } = useTranslation();
 
   const user = useUser();
-  const userId = user.data?.uid;
 
   const [loading, setLoading] = useState<boolean>(false);
 
