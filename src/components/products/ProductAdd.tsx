@@ -15,6 +15,13 @@ interface Product {
   type: string;
 }
 
+interface Product {
+  title: string;
+  description: string;
+  niche: string;
+  type: string;
+}
+
 export function ProductAdd() {
   const { t } = useTranslation();
 
