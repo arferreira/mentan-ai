@@ -1,7 +1,6 @@
 import type { NextApiRequest, NextApiResponse } from 'next';
 
 import { Configuration, OpenAIApi } from 'openai';
-import { useProductCreation } from '~/lib/products/hooks/use-create-product';
 
 const configuration = new Configuration({
   apiKey: process.env.OPENAI_API_KEY,
@@ -42,9 +41,6 @@ export default async function generateProduct(
       title,
     }));
     console.log(productsTitleList);
-    for (const product of productListObjects) {
-      await saveProduct(product);
-    }
 
     res.status(200).json({ products: productListObjects });
   } catch (error) {

@@ -6,6 +6,8 @@ import { useTranslation } from 'next-i18next';
 import { ChangeEvent, useState } from 'react';
 
 import { MembershipRole } from '~/lib/organizations/types/membership-role';
+import { useUser } from 'reactfire';
+import { useCreateProduct } from '~/lib/products/hooks/use-create-product';
 
 const NICHES = [
   'Business',
@@ -17,8 +19,18 @@ const NICHES = [
   'Marketing',
 ];
 
+interface Product {
+  title: string;
+  description: string;
+  niche: string;
+  type: string;
+}
+
 export function ProductAdd() {
   const { t } = useTranslation();
+
+  const user = useUser();
+  const userId = user.data?.uid;
 
   const [loading, setLoading] = useState<boolean>(false);
 
@@ -28,6 +40,7 @@ export function ProductAdd() {
   );
 
   // hooks
+  const [createProductCallback] = useCreateProduct();
 
   const handleNiche = async (event: React.FormEvent<HTMLFormElement>) => {
     event.preventDefault();
@@ -46,6 +59,20 @@ export function ProductAdd() {
 
       const data = await response.json();
       console.log('data:', data);
+
+      // write products on firestore using the hook function
+      const promises = data.products.map((product: Product) =>
+        createProductCallback({
+          title: product.title,
+          description: product.title,
+          type: product.title,
+          niche: niche,
+        })
+      );
+
+      await Promise.all(promises);
+
+      console.log(promises);
 
       setGeneratedTitles(
         data.products.map((product: { title: string }) => ({
