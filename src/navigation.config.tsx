@@ -16,7 +16,7 @@ const NAVIGATION_CONFIG = {
     },
     {
       label: 'common:productTabLabel',
-      path: 'products',
+      path: '/products',
       Icon: ({ className }: { className: string }) => {
         return <SparklesIcon className={className} />;
       },
