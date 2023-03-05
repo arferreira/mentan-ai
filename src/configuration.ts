@@ -1,5 +1,9 @@
 import { LayoutStyle } from '~/core/layout-style';
-import { GoogleAuthProvider } from 'firebase/auth';
+import {
+  FacebookAuthProvider,
+  GoogleAuthProvider,
+  TwitterAuthProvider,
+} from 'firebase/auth';
 
 const configuration = {
   site: {

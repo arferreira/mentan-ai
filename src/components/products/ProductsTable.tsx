@@ -7,6 +7,8 @@ interface Ebook {
   id: number;
   title: string;
   description: string;
+  niche: string;
+  type: string;
 }
 
 interface ProductsTableProps {
