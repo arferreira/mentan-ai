@@ -4,8 +4,13 @@ import { useMemo } from 'react';
 import Tile from '~/core/ui/Tile';
 import Heading from '~/core/ui/Heading';
 import { useUserSession } from '~/core/hooks/use-user-session';
+import useFetchProducts from '~/lib/dashboard/hooks/use-fetch-products';
+import { useCurrentOrganization } from '~/lib/organizations/hooks/use-current-organization';
+import { useProductStats } from '~/lib/dashboard/hooks/use-products-stats';
 
-export default function DashboardDemo() {
+const DashboardProducts: React.FC<{
+  organizationId: string;
+}> = ({ organizationId }) => {
   const mrr = useMemo(() => generateDemoData(), []);
   const visitors = useMemo(() => generateDemoData(), []);
   const returningVisitors = useMemo(() => generateDemoData(), []);
@@ -15,6 +20,7 @@ export default function DashboardDemo() {
   const newCustomers = useMemo(() => generateDemoData(), []);
   const tickets = useMemo(() => generateDemoData(), []);
   const activeUsers = useMemo(() => generateDemoData(), []);
+  const { data } = useProductStats(organizationId);
 
   return (
     <div className={'flex flex-col space-y-6 pb-36'}>
@@ -26,27 +32,27 @@ export default function DashboardDemo() {
 
           <Tile.Body>
             <div className={'flex justify-between'}>
-              <Tile.Figure>{activeUsers[1]}</Tile.Figure>
+              <Tile.Figure>{data.length}</Tile.Figure>
               <Tile.Trend trend={'up'}>10%</Tile.Trend>
             </div>
 
-            <Chart data={activeUsers[0]} />
+            <Chart data={data} />
           </Tile.Body>
         </Tile>
       </div>
 
       <div>
         <Tile>
-          <Tile.Heading>Infoproducts</Tile.Heading>
+          <Tile.Heading>Last Infoproducts</Tile.Heading>
 
           <Tile.Body>
-            <CustomersTable></CustomersTable>
+            <ProductsTable></ProductsTable>
           </Tile.Body>
         </Tile>
       </div>
     </div>
   );
-}
+};
 
 function UserGreetings() {
   const user = useUserSession();
@@ -114,60 +120,41 @@ function Chart(
   );
 }
 
-function CustomersTable() {
+function ProductsTable() {
+  const organization = useCurrentOrganization();
+  const { data: products, status } = useFetchProducts(organization?.id ?? '');
+
+  if (status === 'loading') {
+    return <div>Loading...</div>;
+  }
+
   return (
     <table className={'Table'}>
       <thead>
         <tr>
           <th>Title</th>
           <th>Niche</th>
-          <th>Potential Profit (Monthly)</th>
           <th>Created at</th>
           <th>Status</th>
         </tr>
       </thead>
 
       <tbody>
-        <tr>
-          <td>Mastering the Art of Investing</td>
-          <td>Investing</td>
-          <td>$100.2</td>
-          <td>2023-02-25 19:47:32</td>
-          <td>
-            <Tile.Badge trend={'up'}>Running</Tile.Badge>
-          </td>
-        </tr>
-
-        <tr>
-          <td>Finding Balance</td>
-          <td>Wellness</td>
-          <td>$40.6</td>
-          <td>2023-02-25 19:47:32</td>
-          <td>
-            <Tile.Badge trend={'stale'}>Paused</Tile.Badge>
-          </td>
-        </tr>
-
-        <tr>
-          <td>Building Strong and Fulfilling Relationships</td>
-          <td>Relationships</td>
-          <td>$2004.3</td>
-          <td>2023-02-25 19:47:32</td>
-          <td>
-            <Tile.Badge trend={'up'}>Running</Tile.Badge>
-          </td>
-        </tr>
-
-        <tr>
-          <td>Unlocking Your Potential</td>
-          <td>Self-Improvement</td>
-          <td>$0</td>
-          <td>2023-02-25 19:47:32</td>
-          <td>
-            <Tile.Badge trend={'down'}>Stopped</Tile.Badge>
-          </td>
-        </tr>
+        {products.map((product) => (
+          <tr key={product.id}>
+            <td>{product.title}</td>
+            <td>{product.niche}</td>
+            <td>{product.createdAt.toLocaleString()}</td>
+            <td>
+              <Tile.Badge trend={product.done ? 'up' : 'down'}>
+                {product.done ? 'created' : 'only generated'}
+              </Tile.Badge>
+            </td>
+          </tr>
+        ))}
       </tbody>
     </table>
   );
 }
+
+export default DashboardProducts;
