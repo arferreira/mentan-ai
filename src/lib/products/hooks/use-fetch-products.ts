@@ -1,23 +1,29 @@
-import { useFirestore, useFirestoreDocData } from 'reactfire';
-import { doc, DocumentReference } from 'firebase/firestore';
-import { Organization } from '~/lib/organizations/types/organization';
-import { PRODUCTS_COLLECTION } from '~/lib/firestore-collections';
+import { useFirestore, useFirestoreCollectionData } from 'reactfire';
+import {
+  collection,
+  CollectionReference,
+  query,
+  where,
+} from 'firebase/firestore';
+import { Product } from '../types/product-model';
 
-type Response = WithId<Organization>;
-
-/**
- * @name useFetchProduct
- * @description Returns a stream with the selected products's data
- * @param productId
- */
-export function useFetchProduct(organizationId: string) {
+function useFetchProducts(organizationId: string) {
   const firestore = useFirestore();
+  const productsCollection = 'products';
 
-  const ref = doc(
+  const collectionRef = collection(
     firestore,
-    PRODUCTS_COLLECTION,
-    organizationId
-  ) as DocumentReference<Response>;
+    productsCollection
+  ) as CollectionReference<WithId<Product>>;
 
-  return useFirestoreDocData(ref, { idField: 'id' });
+  const path = `organizationId`;
+  const operator = '==';
+  const constraint = where(path, operator, organizationId);
+  const organizationsQuery = query(collectionRef, constraint);
+
+  return useFirestoreCollectionData(organizationsQuery, {
+    idField: 'id',
+  });
 }
+
+export default useFetchProducts;
