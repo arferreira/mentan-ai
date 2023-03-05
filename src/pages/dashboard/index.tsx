@@ -3,18 +3,20 @@ import dynamic from 'next/dynamic';
 
 import { withAppProps } from '~/lib/props/with-app-props';
 import RouteShell from '~/components/RouteShell';
+import { useCurrentOrganization } from '~/lib/organizations/hooks/use-current-organization';
 
-const DashboardDemo = dynamic(
-  () => import('~/components/dashboard/DashboardDemo'),
+const DashboardProducts = dynamic(
+  () => import('~/components/dashboard/Dashboard'),
   {
     ssr: false,
   }
 );
 
 const Dashboard = () => {
+  const organization = useCurrentOrganization();
   return (
     <RouteShell title={'Dashboard'}>
-      <DashboardDemo />
+      <DashboardProducts organizationId={organization?.id ?? ''} />
     </RouteShell>
   );
 };
