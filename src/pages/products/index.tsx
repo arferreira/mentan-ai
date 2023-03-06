@@ -18,7 +18,7 @@ const Tasks = () => {
   }
 
   return (
-    <RouteShell title={'Products'}>
+    <RouteShell title={t('common:productTabLabel')}>
       <OrganizationContext.Consumer>
         {(context) => {
           const organizationId = context.organization?.id;
