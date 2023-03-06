@@ -33,6 +33,7 @@
   "buttonNewProduct": "Criar um produto",
   "buttonFirstProduct": "Criar seu primeiro produto",
   "noProductsFound": "Nenhum produto encontrado",
+  "error": "Desculpe, encontramos um erro ao buscar suas tarefas",
   "roles": {
     "owner": {
       "label": "Proprietário",

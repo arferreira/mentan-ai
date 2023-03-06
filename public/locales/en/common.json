@@ -33,6 +33,7 @@
   "buttonNewProduct": "Create a product",
   "buttonFirstProduct": "Create your first product",
   "noProductsFound": "No products found",
+  "error": "Sorry, we encountered an error while fetching your tasks",
   "roles": {
     "owner": {
       "label": "Owner",

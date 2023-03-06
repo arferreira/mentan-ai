@@ -21,7 +21,7 @@ const ProductsContainer: React.FC<{
   if (status === `error`) {
     return (
       <Alert type={'error'}>
-        Sorry, we encountered an error while fetching your tasks.
+        {t('common:error')}
       </Alert>
     );
   }
