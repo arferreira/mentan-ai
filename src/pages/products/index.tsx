@@ -6,9 +6,12 @@ import { OrganizationContext } from '~/lib/contexts/organization';
 import Alert from '../../core/ui/Alert';
 import { useSigninCheck } from 'reactfire';
 import ProductsContainer from '~/components/products/ProductsContainer';
+import { Trans, useTranslation } from 'next-i18next';
 
 const Tasks = () => {
   const signInCheck = useSigninCheck();
+
+  const { t } = useTranslation();
 
   if (!signInCheck.data?.signedIn) {
     return null;
@@ -21,7 +24,7 @@ const Tasks = () => {
           const organizationId = context.organization?.id;
 
           if (!organizationId) {
-            return <Alert type={`warn`}>No organization selected</Alert>;
+            return <Alert type={`warn`}>{t('common:noOrganization')}</Alert>;
           }
 
           return <ProductsContainer organizationId={organizationId} />;

@@ -28,6 +28,11 @@
   "documentation": "Documentation",
   "getStarted": "Get Started",
   "contactUs": "Contact Us",
+  "noOrganization": "No organization selected",
+  "loadingProducts": "Loading Products...",
+  "buttonNewProduct": "Create a product",
+  "buttonFirstProduct": "Create your first product",
+  "noProductsFound": "No products found",
   "roles": {
     "owner": {
       "label": "Owner",
@@ -42,5 +47,4 @@
       "description": "Cannot invite members or change settings"
     }
   }
-
 }

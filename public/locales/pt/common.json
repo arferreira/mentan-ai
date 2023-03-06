@@ -28,6 +28,11 @@
   "documentation": "Documentação",
   "getStarted": "Começar",
   "contactUs": "Fale conosco",
+  "noOrganization": "Nenhuma organização selecionada",
+  "loadingProducts": "Carregando Produtos...",
+  "buttonNewProduct": "Criar um produto",
+  "buttonFirstProduct": "Criar seu primeiro produto",
+  "noProductsFound": "Nenhum produto encontrado",
   "roles": {
     "owner": {
       "label": "Proprietário",

@@ -6,13 +6,16 @@ import Button from '~/core/ui/Button';
 import ProductsList from './ProductsList';
 import useFetchProducts from '~/lib/products/hooks/use-fetch-products';
 
+import { Trans, useTranslation } from 'next-i18next';
+
 const ProductsContainer: React.FC<{
   organizationId: string;
 }> = ({ organizationId }) => {
   const { status, data: products } = useFetchProducts(organizationId);
+  const { t } = useTranslation();
 
   if (status === `loading`) {
-    return <PageLoadingIndicator>Loading Tasks...</PageLoadingIndicator>;
+    return <PageLoadingIndicator>{t('common:loadingProducts')}</PageLoadingIndicator>;
   }
 
   if (status === `error`) {
@@ -32,13 +35,14 @@ const ProductsContainer: React.FC<{
       <ProductsList products={products} />
 
       <div>
-        <CreateTaskButton>New Product</CreateTaskButton>
+        <CreateTaskButton>{t('common:buttonNewProduct')}</CreateTaskButton>
       </div>
     </div>
   );
 };
 
 function ProductsEmptyState() {
+  const { t } = useTranslation();
   return (
     <div
       className={
@@ -46,10 +50,10 @@ function ProductsEmptyState() {
       }
     >
       <div>
-        <Heading type={5}>No products found</Heading>
+        <Heading type={5}>{t('common:noProductsFound')}</Heading>
       </div>
 
-      <CreateTaskButton>Create your first Product</CreateTaskButton>
+      <CreateTaskButton>{t('common:buttonFirstProduct')}</CreateTaskButton>
     </div>
   );
 }
