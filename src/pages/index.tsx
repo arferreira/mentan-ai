@@ -49,8 +49,8 @@ const Index = () => {
                 <span
                   className={
                     'bg-gradient-to-br bg-clip-text text-transparent' +
-                    ' from-primary-500 to-primary-400' +
-                    ' to-primary-400 leading-[1.2]'
+                    ' from-purple-900 to-purple-900' +
+                    ' to-purple-900 leading-[1.2]'
                   }
                 >
                   {t(`auth:subHeadLine`)}
@@ -67,14 +67,14 @@ const Index = () => {
               </div>
 
               <div className={'flex items-center space-x-4'}>
-                <Button round href={'/auth/sign-up'}>
+                <Button href={'/auth/sign-up'}>
                   <span className={'flex items-center space-x-2'}>
                     <span>{t(`auth:getStarted`)}</span>
                     <ChevronRightIcon className={'h-3'} />
                   </span>
                 </Button>
 
-                <Button round color={'secondary'} href={'/pricing'}>
+                <Button color={'secondary'} href={'/pricing'}>
                   <span className={'flex items-center space-x-2'}>
                     <span>{t(`auth:viewPricing`)}</span>
                   </span>
@@ -88,12 +88,12 @@ const Index = () => {
               priority
               className={
                 'hero-image-shadow rounded-2xl' +
-                ' shadow-primary-500/40 dark:shadow-primary-500/30'
+                ' shadow-purple-900/40 dark:shadow-purple-900/30'
               }
               width={2688}
               height={1824}
               src={`https://wallpapers.com/images/hd/blank-white-landscape-7sn5o1woonmklx1h.jpg`}
-              alt={`App Image`}
+              alt={`mentan-ai`}
             />
           </div>
         </SlideUpTransition>
@@ -114,10 +114,10 @@ const Index = () => {
           >
             <div className={'flex flex-col items-center space-y-2'}>
               <div>
-                <FireIcon className={'h-6 text-primary-500'} />
+                <FireIcon className={'h-6 text-purple-900'} />
               </div>
 
-              <b className={'text-primary-500'}>{t(`auth:features`)}</b>
+              <b className={'text-purple-900'}>{t(`auth:features`)}</b>
             </div>
 
             <Hero>{t(`auth:featuresH1`)}</Hero>
