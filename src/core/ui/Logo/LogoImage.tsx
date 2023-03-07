@@ -36,10 +36,10 @@ const LogoImage: React.FCC<{
 
         <p className="ml-3 text-3xl font-bold">
           <span className="text-black">mentan</span>
-          <span className="bg-gradient-to-br from-primary-500 to-primary-400 to-primary-400 bg-clip-text leading-[1.2] text-transparent">
+          <span className="bg-gradient-to-br from-purple-900 to-purple-900 to-purple-900 bg-clip-text leading-[1.2] text-transparent">
             .
           </span>
-          <span className="bg-gradient-to-br from-primary-500 to-primary-400 to-primary-400 bg-clip-text leading-[1.2] text-transparent">
+          <span className="bg-gradient-to-br from-purple-900 to-purple-900 to-purple-900 bg-clip-text leading-[1.2] text-transparent">
             ai
           </span>
         </p>

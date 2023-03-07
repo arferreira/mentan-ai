@@ -118,7 +118,7 @@ function getClassNameBuilder() {
         {
           color: 'primary',
           variant: 'normal',
-          className: `bg-primary-500 dark:focus:ring-primary-500/70 text-primary-contrast hover:bg-primary-600 active:bg-primary-700 dark:text-primary-contrast`,
+          className: `bg-purple-900 dark:focus:ring-primary-500/70 text-primary-contrast hover:bg-primary-600 active:bg-primary-700 dark:text-primary-contrast`,
         },
         {
           color: 'danger',
@@ -143,7 +143,7 @@ function getClassNameBuilder() {
         {
           color: 'primary',
           variant: 'flat',
-          className: `bg-primary-500/10 dark:focus:ring-primary-500/70 text-primary-500 hover:bg-primary-500/20 
+          className: `bg-primary-500/10 dark:focus:ring-primary-500/70 text-primary-500 hover:bg-primary-500/20
       active:bg-primary-500/30 dark:hover:bg-primary-500/20 dark:active:bg-primary-500/30`,
         },
         {
