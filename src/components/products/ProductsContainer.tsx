@@ -21,7 +21,7 @@ const ProductsContainer: React.FC<{
   if (status === `error`) {
     return (
       <Alert type={'error'}>
-        {t('common:error')}
+        {t('common:errorProductsContainer')}
       </Alert>
     );
   }

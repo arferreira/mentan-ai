@@ -14,12 +14,16 @@ import { create } from 'cypress/types/lodash';
 import useCreateProduct from '~/lib/products/hooks/use-create-product';
 import { type } from 'os';
 
+import { useTranslation } from 'next-i18next';
+
 const CreateProductForm = () => {
   const createProduct = useCreateProduct();
   const { setLoading, state } = useRequestState();
   const router = useRouter();
   const organization = useCurrentOrganization();
   const organizationId = organization?.id as string;
+
+  const {t} = useTranslation()
 
   const onCreateProduct: FormEventHandler<HTMLFormElement> = useCallback(
     async (event) => {
@@ -54,11 +58,11 @@ const CreateProductForm = () => {
         type: niche,
         createdAt: getDefaultDueDate(),
       };
-
+      
       await toaster.promise(createProduct(product), {
-        success: `Procut created!`,
-        error: `Ops, error!`,
-        loading: `Creating Product...`,
+        success: t('common:productCreated'),
+        error: t('common:errorCreateProduct'),
+        loading: t('common:creatingProduct'),
       });
 
       await router.push(`/products`);
@@ -69,7 +73,7 @@ const CreateProductForm = () => {
   return (
     <div className={'flex flex-col space-y-4'}>
       <div>
-        <Heading type={2}>Create a new Product</Heading>
+        <Heading type={2}>{t('common:createNewProduct')}</Heading>
       </div>
 
       <form onSubmit={onCreateProduct}>
@@ -92,7 +96,7 @@ const CreateProductForm = () => {
           >
             <Button loading={state.loading}>
               <If condition={state.loading} fallback={<>Create Product</>}>
-                Creating Product...
+              {t('common:creatingProduct')}
               </If>
             </Button>
 
