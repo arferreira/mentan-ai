@@ -54,6 +54,7 @@ const SiteHeader: React.FCC<{
                 <DarkModeToggle />
               </div>
             </If>
+            {!userSession?.auth && <LanguageSwitcherFlag />}
 
             <Transition
               appear
