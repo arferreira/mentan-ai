@@ -59,8 +59,8 @@ const ProfileDropdown: React.FCC<{
         <ProfileAvatar user={user} />
 
         <ChevronDownIcon className={'h-4'} />
+        <LanguageSwitcherFlag />
       </DropdownMenuTrigger>
-      <LanguageSwitcherFlag />
       <DropdownMenuContent
         className={'!min-w-[15rem]'}
         collisionPadding={{ right: 20 }}
