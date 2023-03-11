@@ -33,6 +33,17 @@
   "buttonNewProduct": "Create a product",
   "buttonFirstProduct": "Create your first product",
   "noProductsFound": "No products found",
+  "errorProductsContainer": "Sorry, we encountered an error while fetching your tasks",
+  "deletingProduct": "You are about to delete the product",
+  "confirmDeletingProduct": "Yep, delete product",
+  "continueDeletingProduct": "Do you want to continue?",
+  "productCreated": "Product created!",
+  "errorCreateProduct": "Ops, error!",
+  "creatingProduct": "Creating Product...",
+  "createNewProduct": "Create a new Product",
+  "deletingProductTitle": "Deleting Product",
+  "productHeadline": "Tell me that you have a desire to create. ",
+  "nicheProduct": "niche",
   "roles": {
     "owner": {
       "label": "Owner",

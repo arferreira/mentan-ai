@@ -1,4 +1,5 @@
 import { useRouter } from 'next/router';
+import { useTranslation } from 'next-i18next';
 import { FormEventHandler, useCallback } from 'react';
 
 import TextField from '~/core/ui/TextField';
@@ -15,6 +16,7 @@ import useCreateProduct from '~/lib/products/hooks/use-create-product';
 import { type } from 'os';
 
 const CreateProductForm = () => {
+  const { t } = useTranslation();
   const createProduct = useCreateProduct();
   const { setLoading, state } = useRequestState();
   const router = useRouter();
@@ -56,9 +58,9 @@ const CreateProductForm = () => {
       };
 
       await toaster.promise(createProduct(product), {
-        success: `Procut created!`,
-        error: `Ops, error!`,
-        loading: `Creating Product...`,
+        success: t('common:productCreated'),
+        error: t('common:productCreationError'),
+        loading: t('common:creatingProduct'),
       });
 
       await router.push(`/products`);
@@ -69,7 +71,7 @@ const CreateProductForm = () => {
   return (
     <div className={'flex flex-col space-y-4'}>
       <div>
-        <Heading type={2}>Create a new Product</Heading>
+        <Heading type={2}>Tell me that you have a desire to create.</Heading>
       </div>
 
       <form onSubmit={onCreateProduct}>
@@ -81,7 +83,7 @@ const CreateProductForm = () => {
               name={'niche'}
               placeholder={'ex. relationship'}
             />
-            <TextField.Hint>Hint: whatever you do, ship!</TextField.Hint>
+            <TextField.Hint>Hint: {t('common:productHeadline')}</TextField.Hint>
           </TextField.Label>
 
           <div

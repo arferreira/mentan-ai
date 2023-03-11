@@ -15,13 +15,15 @@ const ProductsContainer: React.FC<{
   const { t } = useTranslation();
 
   if (status === `loading`) {
-    return <PageLoadingIndicator>{t('common:loadingProducts')}</PageLoadingIndicator>;
+    return (
+      <PageLoadingIndicator>{t('common:loadingProducts')}</PageLoadingIndicator>
+    );
   }
 
   if (status === `error`) {
     return (
       <Alert type={'error'}>
-        Sorry, we encountered an error while fetching your tasks.
+        Sorry, we encountered an error while fetching your products.
       </Alert>
     );
   }

@@ -33,6 +33,17 @@
   "buttonNewProduct": "Criar um produto",
   "buttonFirstProduct": "Criar seu primeiro produto",
   "noProductsFound": "Nenhum produto encontrado",
+  "errorProductsContainer": "Desculpe, encontramos um erro ao buscar suas tarefas",
+  "deletingProduct": "Você está prestes a excluir o produto",
+  "confirmDeletingProduct": "Sim, exclua o produto",
+  "continueDeletingProduct": "Você quer continuar?",
+  "productCreated": "Produto criado!",
+  "errorCreateProduct": "Ops, erro!",
+  "creatingProduct": "Criando Produto...",
+  "createNewProduct": "Criar um novo Produto",
+  "nicheProduct": "niche",
+  "deletingProductTitle": "Deletar Produto",
+  "productHeadline": "Me diga o que você mais gosta de fazer e eu vou te dizer o que você deveria vender",
   "roles": {
     "owner": {
       "label": "Proprietário",
