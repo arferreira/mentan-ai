@@ -25,6 +25,8 @@ import Divider from '~/core/ui/Divider';
 import SlideUpTransition from '~/core/ui/SlideUpTransition';
 import { useTranslation } from 'next-i18next';
 
+import mentanImage from '../../public/assets/images/mentan-1.png';
+
 const Index = () => {
   const { t } = useTranslation();
   return (
@@ -85,7 +87,7 @@ const Index = () => {
               }
               width={2688}
               height={1824}
-              src={`https://wallpapers.com/images/hd/blank-white-landscape-7sn5o1woonmklx1h.jpg`}
+              src={mentanImage}
               alt={`mentan-ai`}
             />
           </div>
