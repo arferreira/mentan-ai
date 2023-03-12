@@ -8,14 +8,14 @@ const links = [
     path: '/settings/profile',
     i18n: 'common:profileSettingsTabLabel',
   },
-  {
-    path: '/settings/organization',
-    i18n: 'common:organizationSettingsTabLabel',
-  },
-  {
-    path: '/settings/subscription',
-    i18n: 'common:subscriptionSettingsTabLabel',
-  },
+  // {
+  //   path: '/settings/organization',
+  //   i18n: 'common:organizationSettingsTabLabel',
+  // },
+  // {
+  //   path: '/settings/subscription',
+  //   i18n: 'common:subscriptionSettingsTabLabel',
+  // },
 ];
 
 const SettingsPageContainer: React.FCC<{
