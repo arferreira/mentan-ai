@@ -18,10 +18,9 @@ import Layout from '~/core/ui/Layout';
 import Container from '~/core/ui/Container';
 import Footer from '~/components/Footer';
 import SiteHeader from '~/components/SiteHeader';
-import SubHeading from '~/core/ui/SubHeading';
+
 import Button from '~/core/ui/Button';
-import Heading from '~/core/ui/Heading';
-import Hero from '~/core/ui/Hero';
+
 import Divider from '~/core/ui/Divider';
 import SlideUpTransition from '~/core/ui/SlideUpTransition';
 import { useTranslation } from 'next-i18next';

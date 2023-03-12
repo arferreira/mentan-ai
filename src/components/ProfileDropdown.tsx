@@ -36,7 +36,7 @@ import {
 } from '~/core/theming';
 
 import If from '~/core/ui/If';
-import LanguageSwitcherFlag from './LanguageSwitcherFlag';
+// import LanguageSwitcherFlag from './LanguageSwitcherFlag';
 
 const ProfileDropdown: React.FCC<{
   user: Maybe<UserInfo>;
@@ -59,7 +59,7 @@ const ProfileDropdown: React.FCC<{
         <ProfileAvatar user={user} />
 
         <ChevronDownIcon className={'h-4'} />
-        <LanguageSwitcherFlag />
+        {/* <LanguageSwitcherFlag /> */}
       </DropdownMenuTrigger>
       <DropdownMenuContent
         className={'!min-w-[15rem]'}

@@ -20,7 +20,7 @@ const DarkModeToggle = dynamic(() => import('~/components/DarkModeToggle'), {
 });
 
 import configuration from '~/configuration';
-import LanguageSwitcherFlag from './LanguageSwitcherFlag';
+// import LanguageSwitcherFlag from './LanguageSwitcherFlag';
 
 const fixedClassName = `FixedHeader`;
 
@@ -54,7 +54,7 @@ const SiteHeader: React.FCC<{
                 <DarkModeToggle />
               </div>
             </If>
-            {!userSession?.auth && <LanguageSwitcherFlag />}
+            {/* {!userSession?.auth && <LanguageSwitcherFlag />} */}
 
             <Transition
               appear
