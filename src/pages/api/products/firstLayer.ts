@@ -20,7 +20,7 @@ export default async function generateProduct(
   req: NextApiRequest,
   res: NextApiResponse<ApiResponse>
 ) {
-  const firstPrompt = `Atue como um especialista em marketing digital e crie para mim 1 título de e-book ou infoprodutos digitais atraentes e comunicativos que apliquem o mecanismo único no nicho de ${req.body.prompt}. Considere as necessidades e interesses do público-alvo e destaque os benefícios únicos do produto de forma convincente.`;
+  const firstPrompt = `As a digital marketing specialist, create for me 1 attractive and communicative e-book or digital infoproduct title that applies the unique mechanism in the ${req.body.prompt} niche. Consider the needs and interests of the target audience and compellingly highlight the unique benefits of the product.`;
 
   try {
     if (!configuration.apiKey) {
