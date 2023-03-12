@@ -69,15 +69,10 @@ const Onboarding = () => {
             </div>
 
             <div className={'w-9/12'}>
-              <If condition={currentStep === 0}>
-                <OrganizationInfoStep onSubmit={onFirstStepSubmitted} />
-              </If>
-
-              <If condition={currentStep === 1 && data}>
-                {(data) => (
-                  <CompleteOnboardingStep data={data} onComplete={onComplete} />
-                )}
-              </If>
+              <CompleteOnboardingStep
+                data={{ organization: `Organization` }}
+                onComplete={onComplete}
+              />
             </div>
           </div>
 

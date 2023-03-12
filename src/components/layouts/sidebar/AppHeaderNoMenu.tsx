@@ -22,9 +22,9 @@ const AppHeaderNoMenu: React.FCC = ({ children }) => {
         </div>
 
         <div className={'flex items-center space-x-2.5 lg:space-x-4'}>
-          <If condition={userSession?.auth?.uid}>
+          {/* <If condition={userSession?.auth?.uid}>
             {(uid) => <OrganizationsSelector userId={uid} />}
-          </If>
+          </If> */}
 
           {children}
         </div>

@@ -12,7 +12,7 @@ const YEAR = new Date().getFullYear();
 function Footer() {
   const { t } = useTranslation();
   return (
-    <footer className={'mb-10 justify-center '}>
+    <footer className={'mb-14 justify-center '}>
       <div className="mx-auto mt-2 text-center">
         Made with <span className="mx-1 text-red-500">❤</span> in Florida &copy;{' '}
         {new Date().getFullYear()}

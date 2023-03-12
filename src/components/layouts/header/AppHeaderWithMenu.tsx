@@ -45,13 +45,13 @@ const AppHeaderWithMenu: React.FCC = ({ children }) => {
               <MobileNavigation />
             </div>
 
-            <div className={'flex flex-1 items-center space-x-4'}>
+            {/* <div className={'flex flex-1 items-center space-x-4'}>
               <div className={'hidden lg:flex'}>
                 <Logo href={configuration.paths.appHome} />
               </div>
 
               <div>{OrganizationsDropdown}</div>
-            </div>
+            </div> */}
 
             <div className={'flex flex-1 justify-end space-x-4'}>
               <div className={'hidden items-center lg:flex'}>
