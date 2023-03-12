@@ -1,4 +1,5 @@
 export interface Product {
+  id?: string;
   title: string;
   description: string;
   type: string;
@@ -6,4 +7,6 @@ export interface Product {
   organizationId: string;
   done: boolean;
   createdAt: string;
+  introduction?: string;
+  chapters?: any;
 }

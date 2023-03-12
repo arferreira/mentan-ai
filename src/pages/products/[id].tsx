@@ -5,10 +5,10 @@ import RouteShell from '~/components/RouteShell';
 import { OrganizationContext } from '~/lib/contexts/organization';
 import Alert from '../../core/ui/Alert';
 import { useSigninCheck } from 'reactfire';
-import ProductsContainer from '~/components/products/ProductsContainer';
+import ProductContainer from '~/components/products/ProductContainer';
 import { Trans, useTranslation } from 'next-i18next';
 
-const Products = () => {
+const Products = ({ productId }: { productId: string }) => {
   const signInCheck = useSigninCheck();
 
   const { t } = useTranslation();
@@ -27,7 +27,12 @@ const Products = () => {
             return <Alert type={`warn`}>{t('common:noOrganization')}</Alert>;
           }
 
-          return <ProductsContainer organizationId={organizationId} />;
+          return (
+            <ProductContainer
+              productId={productId}
+              organizationId={organizationId}
+            />
+          );
         }}
       </OrganizationContext.Consumer>
     </RouteShell>

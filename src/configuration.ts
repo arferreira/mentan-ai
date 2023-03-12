@@ -1,20 +1,16 @@
 import { LayoutStyle } from '~/core/layout-style';
-import {
-  FacebookAuthProvider,
-  GoogleAuthProvider,
-  TwitterAuthProvider,
-} from 'firebase/auth';
+import { GoogleAuthProvider } from 'firebase/auth';
 
 const configuration = {
   site: {
-    name: 'mentan.ai - create any infoproduct in minutes',
+    name: 'mentan.ai - create any PLR in minutes',
     description: 'Unlock a world of possibilities with our innovative product.',
     themeColor: '#ffffff',
     themeColorDark: '#0a0a0a',
     siteUrl: process.env.NEXT_PUBLIC_SITE_URL as string,
     siteName: 'mentan.ai',
     twitterHandle: '',
-    githubHandle: '',
+    githubHandle: 'https://github.com/arferreira',
     language: 'en',
     convertKitFormId: '',
     locale: process.env.DEFAULT_LOCALE,
