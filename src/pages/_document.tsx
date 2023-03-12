@@ -3,7 +3,8 @@ import Document, { Html, Main, Head, NextScript } from 'next/document';
 export default class MyDocument extends Document {
   render() {
     return (
-      <Html className={this.getTheme()}>
+      // <Html className={this.getTheme()}>
+      <Html className="dark">
         <Head />
 
         <body>

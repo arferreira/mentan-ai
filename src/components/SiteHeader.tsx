@@ -45,7 +45,7 @@ const SiteHeader: React.FCC<{
 
           <div className={'flex flex-1 items-center justify-end space-x-4'}>
             {/* <LanguageSwitcherFlag /> */}
-            <If
+            {/* <If
               condition={
                 configuration.enableThemeSwitcher && !userSession?.auth
               }
@@ -53,7 +53,7 @@ const SiteHeader: React.FCC<{
               <div className={'flex items-center'}>
                 <DarkModeToggle />
               </div>
-            </If>
+            </If> */}
             {/* {!userSession?.auth && <LanguageSwitcherFlag />} */}
 
             <Transition
