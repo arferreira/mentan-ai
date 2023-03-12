@@ -73,12 +73,6 @@ const Index = () => {
                     <ChevronRightIcon className={'h-3'} />
                   </span>
                 </Button>
-
-                <Button color={'secondary'} href={'/pricing'}>
-                  <span className={'flex items-center space-x-2'}>
-                    <span>{t(`auth:viewPricing`)}</span>
-                  </span>
-                </Button>
               </div>
             </div>
           </div>
@@ -101,7 +95,7 @@ const Index = () => {
 
       <Divider />
 
-      <Container>
+      {/* <Container>
         <div
           className={
             'flex flex-col items-center justify-center space-y-24 py-12'
@@ -165,7 +159,7 @@ const Index = () => {
             </div>
           </div>
         </div>
-      </Container>
+      </Container> */}
 
       <Divider />
 
