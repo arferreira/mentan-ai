@@ -26,8 +26,8 @@ const ProductContainer: React.FC<{
   if (status === `error`) {
     return (
       <Alert type={'error'}>
-        Oops, looks like there was a problem with your product request! We'll do
-        our best to fix it as soon as possible.
+        Oops, looks like there was a problem with your product request!
+        We&apos;ll do our best to fix it as soon as possible.
       </Alert>
     );
   }

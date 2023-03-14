@@ -71,7 +71,9 @@ const CreateProductForm = () => {
   return (
     <div className={'flex flex-col space-y-4'}>
       <div>
-        <Heading type={2}>Let's create your infoproduct masterpiece!</Heading>
+        <Heading type={2}>
+          Let&apos;s create your infoproduct masterpiece!
+        </Heading>
       </div>
 
       <form onSubmit={onCreateProduct}>
