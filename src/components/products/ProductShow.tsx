@@ -59,9 +59,9 @@ const Show = ({ product }: { product?: Product }) => {
             organizationId: product?.organizationId,
           }),
           {
-            success: `Your chapters was generated!`,
-            loading: `Generating chapters...`,
-            error: `Ops, error! We could not generate the chapters`,
+            success: `Great news! Your chapters was successfully created.`,
+            loading: `Hold on, I'm generating the chapter for your infoproduct...`,
+            error: `Oops! Something went wrong while generating the chapters to your infoproduct. Please try again later.`,
           }
         );
         console.log(`Success! Message: ${response.data.chapters}`);
@@ -105,7 +105,7 @@ const Show = ({ product }: { product?: Product }) => {
         {/* Render additional product information here */}
         {chapters.length > 0 && (
           <div className="mt-10">
-            <Heading type={4}>Chapters</Heading>
+            <Heading type={4}>Summary</Heading>
             <ul>
               {chapters.map((chapter: string, index: number) => (
                 <div
@@ -154,9 +154,16 @@ const Show = ({ product }: { product?: Product }) => {
       </article>
 
       {chapters.length == 0 && (
-        <div>
-          <Button className="mt-20" onClick={onGenerateChapters}>
-            Generate Chapters
+        <div className="flex flex-col items-center justify-center">
+          <Alert type="info" className="mt-20">
+            <p className="text-center text-sm">
+              You can generate chapters for this product by clicking the button
+              below.
+            </p>
+          </Alert>
+          <Button className="mt-10" onClick={onGenerateChapters}>
+            Let's spice it up with some chapters! Click me to generate the
+            perfect flow for your infoproduct.
           </Button>
         </div>
       )}

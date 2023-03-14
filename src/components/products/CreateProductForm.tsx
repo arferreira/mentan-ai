@@ -58,9 +58,9 @@ const CreateProductForm = () => {
       };
 
       await toaster.promise(createProduct(product), {
-        success: t('common:productCreated'),
-        error: t('common:productCreationError'),
-        loading: t('common:creatingProduct'),
+        success: `Great news! Your infoproduct title has been successfully generated.`,
+        loading: `Hold on, I'm generating the infoproduct title...`,
+        error: `Oops! Something went wrong while generating your infoproduct. Please try again later.`,
       });
 
       await router.push(`/products`);

@@ -29,9 +29,9 @@ const ProductListItem: React.FC<{ product: WithId<Product> }> = ({
 
   const onDelete = useCallback(() => {
     return toaster.promise(deleteProduct(), {
-      success: `Product deleted!`,
-      loading: `Deleting product...`,
-      error: `Ops, error! We could not delete product`,
+      success: `Great news! Your infoproduct was successfully deleted.`,
+      loading: `Hold on! We're deleting your infoproduct...`,
+      error: `Oops! Something went wrong while deleting your infoproduct. Please try again later.`,
     });
   }, [deleteProduct]);
 
@@ -64,9 +64,9 @@ const ProductListItem: React.FC<{ product: WithId<Product> }> = ({
         e.stopPropagation();
         toaster
           .promise(generateIntro(), {
-            success: `Your introduction was generated, click on product!`,
+            success: `Great News! Your introduction was generated, click the infoproduct below to view it.`,
             loading: `Generating introduction...`,
-            error: `Ops, error! We could not generate this introduction`,
+            error: `Oops! Something went wrong while generating your introduction. Please try again later.`,
           })
           .then((response) => {
             console.log(`Success! Message: ${response.data.introduction}`);
@@ -128,7 +128,7 @@ const ProductListItem: React.FC<{ product: WithId<Product> }> = ({
 
           <div className={'flex justify-end'}>
             {!product.introduction && (
-              <Tooltip>
+              <Tooltip defaultOpen>
                 <TooltipTrigger onClick={onGenerateIntroduction} asChild>
                   <IconButton>
                     <ArrowTopRightOnSquareIcon
@@ -136,7 +136,11 @@ const ProductListItem: React.FC<{ product: WithId<Product> }> = ({
                     />
                   </IconButton>
                 </TooltipTrigger>
-                <TooltipContent>Generate Introduction</TooltipContent>
+                <TooltipContent>
+                  Spark your audience's curiosity with a standout intro! Click
+                  to create an introduction that'll make your infoproduct shine
+                  ✨.
+                </TooltipContent>
               </Tooltip>
             )}
             <Tooltip>

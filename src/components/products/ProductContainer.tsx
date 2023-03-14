@@ -26,7 +26,8 @@ const ProductContainer: React.FC<{
   if (status === `error`) {
     return (
       <Alert type={'error'}>
-        Sorry, we encountered an error while fetching your product.
+        Oops, looks like there was a problem with your product request! We'll do
+        our best to fix it as soon as possible.
       </Alert>
     );
   }

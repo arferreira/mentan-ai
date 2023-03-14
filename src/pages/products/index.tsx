@@ -18,7 +18,7 @@ const Products = () => {
   }
 
   return (
-    <RouteShell title={'Products'}>
+    <RouteShell title={'Infoproduct'}>
       <OrganizationContext.Consumer>
         {(context) => {
           const organizationId = context.organization?.id;
