@@ -142,7 +142,11 @@ const Show = ({ product }: { product?: Product }) => {
                             />
                           </IconButton>
                         </TooltipTrigger>
-                        <TooltipContent>Generate Content</TooltipContent>
+                        <TooltipContent>
+                          Ready to captivate your audience with a irresistible
+                          narrative? Click to generate informative and engaging
+                          content for this chapter 🚀
+                        </TooltipContent>
                       </Tooltip>
                     </div>
                   </div>

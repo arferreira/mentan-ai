@@ -78,7 +78,7 @@ const Index = () => {
                   href="https://www.producthunt.com/posts/mentan-ai?utm_source=badge-featured&utm_medium=badge&utm_souce=badge-mentan&#0045;ai"
                   target="_blank"
                 >
-                  <img
+                  <Image
                     src="https://api.producthunt.com/widgets/embed-image/v1/featured.svg?post_id=383595&theme=light"
                     alt="mentan&#0046;ai - Unlock&#0032;the&#0032;power&#0032;of&#0032;AI&#0032;to&#0032;create&#0032;high&#0045;quality&#0032;PLRs | Product Hunt"
                     style={{ width: '220px', height: '36px' }}
