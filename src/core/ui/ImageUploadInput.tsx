@@ -1,4 +1,5 @@
 import type { FormEvent, MouseEventHandler } from 'react';
+import Image from 'next/image';
 
 import React, {
   forwardRef,
@@ -118,7 +119,7 @@ const ImageUploadInput = forwardRef<React.ElementRef<'input'>, Props>(
             </If>
 
             <If condition={state.image}>
-              <img
+              <Image
                 loading={'lazy'}
                 style={{
                   width: IMAGE_SIZE,

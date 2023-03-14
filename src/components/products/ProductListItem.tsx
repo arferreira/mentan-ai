@@ -137,9 +137,9 @@ const ProductListItem: React.FC<{ product: WithId<Product> }> = ({
                   </IconButton>
                 </TooltipTrigger>
                 <TooltipContent>
-                  Spark your audience's curiosity with a standout intro! Click
-                  to create an introduction that'll make your infoproduct shine
-                  ✨.
+                  Spark your audience&apos;s curiosity with a standout intro!
+                  Click to create an introduction that&apos;ll make your
+                  infoproduct shine ✨.
                 </TooltipContent>
               </Tooltip>
             )}

@@ -166,7 +166,7 @@ const Show = ({ product }: { product?: Product }) => {
             </p>
           </Alert>
           <Button className="mt-10" onClick={onGenerateChapters}>
-            Let's spice it up with some chapters! Click me to generate the
+            Let&apos;s spice it up with some chapters! Click me to generate the
             perfect flow for your infoproduct.
           </Button>
         </div>
