@@ -20,6 +20,7 @@ import toaster from 'react-hot-toast';
 import useCreateChapters from '~/lib/products/hooks/use-create-chapters';
 import useFetchChapters from '~/lib/products/hooks/use-fetch-chapter';
 import { useCurrentOrganization } from '~/lib/organizations/hooks/use-current-organization';
+import ChapterList from './ChaptersList';
 
 const generateChapters = async (data: {
   title: any;
@@ -133,49 +134,7 @@ const Show = ({ product }: { product?: Product }) => {
             <Heading type={4}>Summary</Heading>
             <ul>
               {chapters.map((chapter: string, index: number) => (
-                <div
-                  className={
-                    'mt-4 rounded border p-4 transition-colors dark:border-black-400'
-                  }
-                  key={index}
-                >
-                  <div key={index} className={'flex items-center space-x-4'}>
-                    <div
-                      key={index}
-                      className={'flex flex-1 flex-col space-y-0.5'}
-                    >
-                      <li key={index}>{chapter}</li>
-                    </div>
-                    <div className={'flex justify-end'}>
-                      {!chapter && (
-                        <Tooltip>
-                          <TooltipTrigger asChild>
-                            <IconButton>
-                              <ArrowTopRightOnSquareIcon
-                                className={'h-5 text-blue-500'}
-                              />
-                            </IconButton>
-                          </TooltipTrigger>
-                          <TooltipContent>Generate Introduction</TooltipContent>
-                        </Tooltip>
-                      )}
-                      <Tooltip>
-                        <TooltipTrigger asChild>
-                          <IconButton>
-                            <ArrowUpRightIcon
-                              className={'h-5 text-indigo-900'}
-                            />
-                          </IconButton>
-                        </TooltipTrigger>
-                        <TooltipContent>
-                          Ready to captivate your audience with a irresistible
-                          narrative? Click to generate informative and engaging
-                          content for this chapter 🚀
-                        </TooltipContent>
-                      </Tooltip>
-                    </div>
-                  </div>
-                </div>
+                <ChapterList chapter={chapter} index={index} key={index} />
               ))}
             </ul>
           </div>
