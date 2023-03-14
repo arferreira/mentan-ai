@@ -31,8 +31,8 @@
   "noOrganization": "No organization selected",
   "loadingProducts": "Loading Products...",
   "buttonNewProduct": "Create a product",
-  "buttonFirstProduct": "Create your first product",
-  "noProductsFound": "No products found",
+  "buttonFirstProduct": "The world is waiting for your product. Click here to get started.",
+  "noProductsFound": "Let's build something amazing together!",
   "errorProductsContainer": "Sorry, we encountered an error while fetching your tasks",
   "deletingProduct": "You are about to delete the product",
   "confirmDeletingProduct": "Yep, delete product",
@@ -42,7 +42,7 @@
   "creatingProduct": "Creating Product...",
   "createNewProduct": "Create a new Product",
   "deletingProductTitle": "Deleting Product",
-  "productHeadline": "Tell me that you have a desire to create. ",
+  "productHeadline": "Enter a broad topic you're passionate about",
   "nicheProduct": "niche",
   "roles": {
     "owner": {

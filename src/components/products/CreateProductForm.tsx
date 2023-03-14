@@ -71,17 +71,16 @@ const CreateProductForm = () => {
   return (
     <div className={'flex flex-col space-y-4'}>
       <div>
-        <Heading type={2}>Tell me that you have a desire to create.</Heading>
+        <Heading type={2}>Let's create your infoproduct masterpiece!</Heading>
       </div>
 
       <form onSubmit={onCreateProduct}>
         <div className={'flex flex-col space-y-3'}>
           <TextField.Label>
-            Niche
             <TextField.Input
               required
               name={'niche'}
-              placeholder={'ex. relationship'}
+              placeholder={"What's your infoproduct niche?"}
             />
             <TextField.Hint>Hint: {t('common:productHeadline')}</TextField.Hint>
           </TextField.Label>
@@ -93,13 +92,16 @@ const CreateProductForm = () => {
             }
           >
             <Button loading={state.loading}>
-              <If condition={state.loading} fallback={<>Create Product</>}>
-                Creating Product...
+              <If
+                condition={state.loading}
+                fallback={<>Ignite my Infoproduct</>}
+              >
+                Creating your masterpiece...
               </If>
             </Button>
 
-            <Button color={'transparent'} href={'/products'}>
-              Go back
+            <Button color={'secondary'} href={'/products'}>
+              I changed my mind, not now
             </Button>
           </div>
         </div>
