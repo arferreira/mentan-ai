@@ -47,7 +47,32 @@ const Show = ({ product }: { product?: Product }) => {
   const organization = useCurrentOrganization();
   const [chapters, setChapters] = useState<any>([]);
   const router = useRouter();
-  console.log('chapters', chapters);
+
+  // Eu preciso capturar os capitulos que ja foram gerados e estão salvos no firestore
+  // para que eu possa renderizar na tela
+  const chaptersGenerated = useFetchChapters(product?.id);
+
+  useEffect(() => {
+    if (Array.isArray(chaptersGenerated) && chaptersGenerated.length > 0) {
+      const chapters = chaptersGenerated.map((chapter: any) => chapter.title);
+      // order by createdAt
+      chapters.sort((a: any, b: any) => {
+        if (a.createdAt < b.createdAt) {
+          return -1;
+        }
+        if (a.createdAt > b.createdAt) {
+          return 1;
+        }
+        return 0;
+      });
+
+      setChapters(chapters);
+    }
+  }, [chaptersGenerated]);
+
+  // happen an error when I try to use the chaptersGenerated
+  // FirebaseError: No matching allow statements
+
   const onGenerateChapters: MouseEventHandler<HTMLButtonElement> = useCallback(
     async (e) => {
       e.stopPropagation();

@@ -25,7 +25,7 @@ function useFetchChapters(productId: any) {
     idField: 'id',
   });
   console.log('useFetchChapters data', data);
-  return data;
+  return data.data;
 }
 
 export default useFetchChapters;

@@ -108,6 +108,11 @@ service cloud.firestore {
       allow read, update, delete: if userIsMemberByOrganizationId(existingData().organizationId);
     }
 
+    match /chapters/{chapterId} {
+     allow create: if isSignedIn();
+      allow read, update, delete;
+    }
+
     match /users/{user} {
       allow read: if userId() == user;
     }
