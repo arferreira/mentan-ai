@@ -95,13 +95,13 @@ const configuration = {
           {
             name: 'Monthly',
             price: '$0',
-            stripePriceId: 'basic-plan-mth',
+            stripePriceId: 'price_1MlhpNF5uQmWxjzhxENFgFzC',
             trialPeriodDays: 30,
           },
           {
             name: 'Yearly',
             price: '$0',
-            stripePriceId: 'basic-plan-yr',
+            stripePriceId: 'price_1MlhpNF5uQmWxjzhxENFgFzC',
             trialPeriodDays: 30,
           },
         ],
@@ -121,13 +121,13 @@ const configuration = {
           {
             name: 'Monthly',
             price: '$9',
-            stripePriceId: 'pro-plan-mth',
+            stripePriceId: 'price_1MlhpNF5uQmWxjzhdKnNKqH3',
             trialPeriodDays: 0,
           },
           {
             name: 'Yearly',
             price: '$89',
-            stripePriceId: 'pro-plan-yr',
+            stripePriceId: 'price_1MlhpNF5uQmWxjzhdKnNKqH3',
             trialPeriodDays: 0,
           },
         ],

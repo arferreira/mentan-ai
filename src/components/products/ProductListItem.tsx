@@ -16,6 +16,7 @@ import { Product } from '~/lib/products/types/product-model';
 import useTimeAgo from '~/core/hooks/use-time-ago';
 import useDeleteProduct from '~/lib/products/hooks/use-delete-product';
 import useUpdateProduct from '~/lib/products/hooks/use-update-product';
+import Badge from '~/core/ui/Badge';
 
 const ProductListItem: React.FC<{ product: WithId<Product> }> = ({
   product,
@@ -110,23 +111,17 @@ const ProductListItem: React.FC<{ product: WithId<Product> }> = ({
                 <span>{product.title}</span>
               )}
             </Heading>
-            <div>
+            <div className="mt-10">
               {product.introduction && (
-                <p className={'text-xs text-gray-600 dark:text-gray-600 '}>
+                <p className={'mt-5 text-xs text-gray-600 dark:text-gray-600'}>
                   <strong>Introduction:</strong>
                   {product.introduction}
                 </p>
               )}
             </div>
-
-            <div>
-              <p className={'text-xs text-gray-400 dark:text-gray-500'}>
-                {/* Created {getTimeAgo(new Date(product.createdAt))} */}
-              </p>
-            </div>
           </div>
 
-          <div className={'flex justify-end'}>
+          <div className={'mt-10 flex justify-end'}>
             {!product.introduction && (
               <Tooltip defaultOpen>
                 <TooltipTrigger onClick={onGenerateIntroduction} asChild>
@@ -152,6 +147,11 @@ const ProductListItem: React.FC<{ product: WithId<Product> }> = ({
               <TooltipContent>Delete Product</TooltipContent>
             </Tooltip>
           </div>
+        </div>
+        <div className="mt-10 flex items-center">
+          <Badge color={'success'} size={'small'} className="text-right">
+            {product.niche}
+          </Badge>
         </div>
       </div>
 

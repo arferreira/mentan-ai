@@ -113,6 +113,11 @@ service cloud.firestore {
       allow read, update, delete;
     }
 
+    match /contents/{contentId} {
+     allow create: if isSignedIn();
+      allow read, update, delete;
+    }
+
     match /users/{user} {
       allow read: if userId() == user;
     }
